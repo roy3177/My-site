@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Roy Meoded | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">RM<span class="dot">.</span></a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#military">Military</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <section id="hero">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-orb orb-1"></div>
+    <div class="hero-orb orb-2"></div>
+    <div class="hero-content">
+      <p class="hero-greeting reveal">Hello, I'm</p>
+      <h1 class="hero-name reveal">Roy Meoded</h1>
+      <h2 class="hero-title reveal">
+        <span class="typed-text"></span><span class="cursor">|</span>
+      </h2>
+      <p class="hero-tagline reveal">
+        Building intelligent systems, data-driven solutions,<br />and scalable applications.
+      </p>
+      <div class="hero-buttons reveal">
+        <a href="#projects" class="btn btn-primary">View Projects</a>
+        <a href="#contact" class="btn btn-outline">Contact Me</a>
+      </div>
+      <div class="hero-scroll-hint reveal">
+        <span>Scroll down</span>
+        <div class="scroll-arrow"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT ========== -->
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title reveal">About <span class="gradient-text">Me</span></h2>
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p>
+            I'm a <strong>3rd-year Computer Science student</strong> with a strong focus on
+            <span class="highlight">Artificial Intelligence</span> and
+            <span class="highlight">Data Science</span>. My academic journey has equipped me with
+            solid foundations in algorithms, systems programming, and machine learning — which I apply
+            to real-world projects that solve meaningful problems.
+          </p>
+          <p>
+            I have hands-on experience in <strong>C</strong>, <strong>C++</strong>, <strong>Python</strong>,
+            <strong>Java</strong>, and <strong>TypeScript</strong>, building everything from low-level systems
+            and game engines to AI-powered pipelines. I'm passionate about backend architecture, intelligent data
+            systems, and writing clean, efficient code.
+          </p>
+          <p>
+            When I'm not coding, I'm exploring the latest research in AI, contributing to open-source
+            projects, and continuously pushing my limits as a developer.
+          </p>
+          <div class="about-stats">
+            <div class="stat">
+              <span class="stat-num">4+</span>
+              <span class="stat-label">Projects</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">3rd</span>
+              <span class="stat-label">Year CS</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">5+</span>
+              <span class="stat-label">Languages</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-visual reveal">
+          <div class="profile-img-wrapper">
+            <div class="profile-img-glow"></div>
+            <img src="profile.jpg" alt="Roy Meoded" class="profile-img" />
+            <div class="profile-img-badge">
+              <span>🟢</span> Open to opportunities
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== EDUCATION ========== -->
+  <section id="education">
+    <div class="container">
+      <h2 class="section-title reveal">Education</h2>
+      <div class="edu-card reveal">
+        <div class="edu-left">
+          <div class="edu-icon">🎓</div>
+          <div class="edu-line"></div>
+        </div>
+        <div class="edu-right">
+          <div class="edu-header">
+            <div>
+              <h3>B.Sc. in Computer Science</h3>
+              <p class="edu-university">Ariel University</p>
+            </div>
+            <span class="edu-date">2022 – 2026</span>
+          </div>
+          <p class="edu-label">Relevant Coursework</p>
+          <div class="edu-courses">
+            <div class="edu-course">
+              <span class="course-name">Operating Systems</span>
+              <span class="course-grade">92</span>
+              <span class="course-desc">UNIX/POSIX, process management, sockets, multithreading & synchronization</span>
+            </div>
+            <div class="edu-course">
+              <span class="course-name">Computer Networks</span>
+              <span class="course-grade">88</span>
+              <span class="course-desc">TCP/IP, HTTP/DNS, socket programming, Wireshark traffic analysis</span>
+            </div>
+            <div class="edu-course">
+              <span class="course-name">Databases</span>
+              <span class="course-grade">85</span>
+              <span class="course-desc">SQL, relational schema design, normalization, NoSQL, JSON formats</span>
+            </div>
+            <div class="edu-course">
+              <span class="course-name">Object-Oriented Programming</span>
+              <span class="course-grade">85</span>
+              <span class="course-desc">OOP principles, design patterns, inheritance, polymorphism</span>
+            </div>
+            <div class="edu-course">
+              <span class="course-name">Architecture of Computers</span>
+              <span class="course-grade">86</span>
+              <span class="course-desc">CPU components, MIPS assembly, computer architecture</span>
+            </div>
+          </div>
+          <div class="edu-extra-tags">
+            <span class="tag">Data Structures</span>
+            <span class="tag">Algorithms</span>
+            <span class="tag">Deep Learning & NLP</span>
+            <span class="tag">Intro to CS</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SKILLS ========== -->
+  <section id="skills">
+    <div class="container">
+      <h2 class="section-title reveal">Technical <span class="gradient-text">Skills</span></h2>
+      <div class="skills-grid">
+
+        <div class="skill-category reveal">
+          <div class="skill-cat-header">
+            <span class="skill-icon">⌨️</span>
+            <h3>Programming</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="tag">Python</span>
+            <span class="tag">C++</span>
+            <span class="tag">C</span>
+            <span class="tag">Java</span>
+            <span class="tag">TypeScript</span>
+          </div>
+        </div>
+
+        <div class="skill-category reveal">
+          <div class="skill-cat-header">
+            <span class="skill-icon">🤖</span>
+            <h3>AI / Data Science</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="tag">Machine Learning</span>
+            <span class="tag">Data Analysis</span>
+            <span class="tag">Pandas</span>
+            <span class="tag">NumPy</span>
+            <span class="tag">Deep Learning</span>
+            <span class="tag">NLP</span>
+            <span class="tag">RAG</span>
+            <span class="tag">MCP</span>
+            <span class="tag">Prompt Engineering</span>
+            <span class="tag">AI Agents</span>
+          </div>
+        </div>
+
+        <div class="skill-category reveal">
+          <div class="skill-cat-header">
+            <span class="skill-icon">☁️</span>
+            <h3>Cloud (AWS)</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="tag">AWS</span>
+            <span class="tag">EC2</span>
+            <span class="tag">S3</span>
+            <span class="tag">Lambda</span>
+            <span class="tag">IAM</span>
+            <span class="tag">VPC</span>
+            <span class="tag">RDS</span>
+            <span class="tag">CloudWatch</span>
+          </div>
+        </div>
+
+        <div class="skill-category reveal">
+          <div class="skill-cat-header">
+            <span class="skill-icon">🛠️</span>
+            <h3>Tools & DevOps</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="tag">Git</span>
+            <span class="tag">GitHub</span>
+            <span class="tag">Linux / WSL</span>
+            <span class="tag">Docker</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">Jira</span>
+            <span class="tag">Slack</span>
+            <span class="tag">Claude Code</span>
+          </div>
+        </div>
+
+        <div class="skill-category reveal">
+          <div class="skill-cat-header">
+            <span class="skill-icon">🧩</span>
+            <h3>CS Concepts</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="tag">Data Structures</span>
+            <span class="tag">Algorithms</span>
+            <span class="tag">Networking</span>
+            <span class="tag">TCP/IP & Sockets</span>
+            <span class="tag">Operating Systems</span>
+            <span class="tag">OOP</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROJECTS ========== -->
+  <section id="projects">
+    <div class="container">
+      <h2 class="section-title reveal">Featured <span class="gradient-text">Projects</span></h2>
+      <div class="projects-grid">
+
+        <div class="project-card reveal">
+          <div class="project-top">
+            <span class="project-icon">🎮</span>
+            <div class="project-links">
+              <a href="https://github.com/roy3177/COUP-Game" target="_blank" class="project-link" aria-label="GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.742 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="project-title">Coup Game</h3>
+          <p class="project-desc">
+            Full implementation of the Coup board game in C++ with complete game logic, character roles,
+            GUI using Dear ImGui, and comprehensive unit testing via doctest framework.
+          </p>
+          <div class="project-tech">
+            <span class="tech-tag">C++</span>
+            <span class="tech-tag">OOP</span>
+            <span class="tech-tag">ImGui</span>
+            <span class="tech-tag">doctest</span>
+          </div>
+        </div>
+
+        <div class="project-card reveal featured">
+  <div class="project-badge">Deep Learning</div>
+  <div class="project-top">
+    <span class="project-icon">🖼️</span>
+    <div class="project-links">
+      <a href="https://github.com/roy3177/From-Pixels-to-Predictions-CIFAR-10-Classifier-Suite" target="_blank" class="project-link">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489..."/>
+        </svg>
+      </a>
+    </div>
+  </div>
+
+    <h3 class="project-title">CIFAR-10 Classifier Suite</h3>
+
+    <p class="project-desc">
+      End-to-end deep learning project for image classification on CIFAR-10.
+      Includes multiple models (baseline, CNNs), training pipelines, evaluation,
+      and performance comparison between architectures.
+    </p>
+
+    <div class="project-tech">
+      <span class="tech-tag">Python</span>
+      <span class="tech-tag">PyTorch</span>
+      <span class="tech-tag">Deep Learning</span>
+      <span class="tech-tag">CNN</span>
+      <span class="tech-tag">Computer Vision</span>
+    </div>
+  </div>
+
+        <div class="project-card reveal">
+          <div class="project-top">
+            <span class="project-icon">🔗</span>
+            <div class="project-links">
+              <a href="https://github.com/roy3177/Graph_Algorithms_Library" target="_blank" class="project-link" aria-label="GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.742 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="project-title">Graph Algorithms Library</h3>
+          <p class="project-desc">
+            Implemented BFS, DFS, Dijkstra, Prim, and Kruskal from scratch with full test coverage
+            and memory validation using Valgrind.
+          </p>
+          <div class="project-tech">
+            <span class="tech-tag">C++</span>
+            <span class="tech-tag">Algorithms</span>
+            <span class="tech-tag">Data Structures</span>
+            <span class="tech-tag">Valgrind</span>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-top">
+            <span class="project-icon">📊</span>
+            <div class="project-links">
+              <a href="https://github.com/roy3177/amazon-sentiment-analysis" target="_blank" class="project-link" aria-label="GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.742 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="project-title">Amazon Sentiment Analysis</h3>
+          <p class="project-desc">
+            ML pipeline that classifies Amazon product reviews as positive or negative using classical
+            machine learning models with text preprocessing and feature engineering.
+          </p>
+          <div class="project-tech">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">scikit-learn</span>
+            <span class="tech-tag">NLP</span>
+            <span class="tech-tag">Pandas</span>
+          </div>
+        </div>
+
+        <div class="project-card reveal featured">
+          <div class="project-badge">AI</div>
+          <div class="project-top">
+            <span class="project-icon">🧠</span>
+            <div class="project-links">
+              <a href="https://github.com/roy3177/rag-lev-boots-project" target="_blank" class="project-link" aria-label="GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.742 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="project-title">RAG Knowledge System</h3>
+          <p class="project-desc">
+            Retrieval-Augmented Generation system leveraging embeddings and a vector database for
+            semantic search. Enables intelligent document querying with context-aware AI responses.
+          </p>
+          <div class="project-tech">
+            <span class="tech-tag">Node.js</span>
+            <span class="tech-tag">TypeScript</span>
+            <span class="tech-tag">PostgreSQL</span>
+            <span class="tech-tag">AI APIs</span>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-top">
+            <span class="project-icon">🔍</span>
+            <div class="project-links">
+              <a href="https://github.com/roy3177/NetScan-C" target="_blank" class="project-link" aria-label="GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.742 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="project-title">NetScan-C</h3>
+          <p class="project-desc">
+            A multithreaded TCP port scanner written in C, capable of scanning target hosts concurrently
+            and generating a structured HTML report with the results.
+          </p>
+          <div class="project-tech">
+            <span class="tech-tag">C</span>
+            <span class="tech-tag">Multithreading</span>
+            <span class="tech-tag">TCP/IP</span>
+            <span class="tech-tag">Networking</span>
+            <span class="tech-tag">Docker</span>
+            <span class="tech-tag">HTML</span>
+          </div>
+        </div>
+
+        <div class="project-card reveal featured">
+          <div class="project-badge">Backend</div>
+          <div class="project-top">
+            <span class="project-icon">⚡</span>
+            <div class="project-links">
+              <a href="https://github.com/roy3177/cute-quotes-api" target="_blank" class="project-link" aria-label="GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.742 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="project-title">Cute Quotes API</h3>
+          <p class="project-desc">
+            A clean and structured REST API built with Node.js and Express, featuring full CRUD operations,
+            validation with express-validator, Swagger documentation, and modular backend architecture
+            (routes, controllers, services, validators).
+          </p>
+          <div class="project-tech">
+            <span class="tech-tag">Node.js</span>
+            <span class="tech-tag">Express</span>
+            <span class="tech-tag">REST API</span>
+            <span class="tech-tag">Swagger</span>
+            <span class="tech-tag">Validation</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== MILITARY SERVICE ========== -->
+  <section id="military">
+    <div class="container">
+      <h2 class="section-title reveal">Military <span class="gradient-text">Service</span></h2>
+      <div class="military-card reveal">
+        <div class="military-left">
+          <div class="military-icon">🎖️</div>
+          <div class="military-line"></div>
+        </div>
+        <div class="military-right">
+          <div class="military-header">
+            <h3>Combat Soldier — Special Forces, Givati Brigade</h3>
+            <span class="military-date">2018 – 2021</span>
+          </div>
+          <ul class="military-bullets">
+            <li>
+              <span class="bullet-dot"></span>
+              <span><strong>Performance under pressure:</strong> Maintained high effectiveness in high-stakes combat situations while collaborating closely with team members.</span>
+            </li>
+            <li>
+              <span class="bullet-dot"></span>
+              <span><strong>Interrogation & Arabic course:</strong> Advanced spoken Arabic skills; served as an effective mediator between Arab civilians and commanders during operations.</span>
+            </li>
+          </ul>
+          <div class="military-tags">
+            <span class="tag">Leadership</span>
+            <span class="tag">Teamwork</span>
+            <span class="tag">Arabic</span>
+            <span class="tag">High-Pressure Environments</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CERTIFICATIONS ========== -->
+  <section id="certifications">
+    <div class="container">
+      <h2 class="section-title reveal">Certif<span class="gradient-text">ications</span></h2>
+      <div class="certs-grid">
+
+        <div class="cert-card reveal featured">
+          <div class="cert-badge">AI</div>
+          <div class="cert-img-wrapper">
+            <img src="cert-ai.jpg" alt="AI for Software Developers Certificate" class="cert-img" />
+          </div>
+          <div class="cert-header">
+            <div class="cert-icon">🧠</div>
+            <div class="cert-meta">
+              <h3>AI for Software Developers – Advanced Track</h3>
+              <p class="cert-issuer">Elevation × TechTroop × MiluimAi</p>
+            </div>
+            <span class="cert-date">Jan 2026</span>
+          </div>
+          <p class="cert-desc">
+            30-hour intensive program covering AI tools and techniques for software developers,
+            including building RAG systems, working with MCP (Model Context Protocol), LLM APIs,
+            and modern AI-powered development workflows.
+          </p>
+          <div class="cert-skills">
+            <span class="tag">RAG</span>
+            <span class="tag">MCP</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">LLM APIs</span>
+            <span class="tag">Prompt Engineering</span>
+            <span class="tag">Vector Databases</span>
+            <span class="tag">AI Agents</span>
+          </div>
+        </div>
+
+        <div class="cert-card reveal featured">
+          <div class="cert-badge">Cloud</div>
+          <div class="cert-img-wrapper">
+            <img src="cert-aws.jpg" alt="AWS Cloud Practitioner Certificate" class="cert-img" />
+          </div>
+          <div class="cert-header">
+            <div class="cert-icon">☁️</div>
+            <div class="cert-meta">
+              <h3>AWS Cloud Practitioner Essentials</h3>
+              <p class="cert-issuer">Amazon Web Services (AWS)</p>
+            </div>
+            <span class="cert-date">Apr 2026</span>
+          </div>
+          <p class="cert-desc">
+            Official AWS training covering core cloud concepts, AWS global infrastructure, key services
+            (EC2, S3, Lambda, RDS, VPC), security & IAM, cloud pricing models, and the shared responsibility model.
+          </p>
+          <div class="cert-skills">
+            <span class="tag">AWS</span>
+            <span class="tag">EC2</span>
+            <span class="tag">S3</span>
+            <span class="tag">Lambda</span>
+            <span class="tag">IAM</span>
+            <span class="tag">VPC</span>
+            <span class="tag">CloudWatch</span>
+            <span class="tag">Cloud Computing</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT ========== -->
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title reveal">Get In <span class="gradient-text">Touch</span></h2>
+      <p class="contact-subtitle reveal">
+        Open to internships, collaborations, and new opportunities.<br />
+        Feel free to reach out!
+      </p>
+      <div class="contact-cards reveal">
+
+        <a href="mailto:roymeoded2512@gmail.com" class="contact-card">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="4" width="20" height="16" rx="2"/>
+              <path d="M2 7l10 7 10-7"/>
+            </svg>
+          </div>
+          <div>
+            <h4>Email</h4>
+            <p>roymeoded2512@gmail.com</p>
+          </div>
+        </a>
+
+        <a href="https://www.linkedin.com/in/roy-meoded-1704bb308/" target="_blank" class="contact-card">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
+              <circle cx="4" cy="4" r="2"/>
+            </svg>
+          </div>
+          <div>
+            <h4>LinkedIn</h4>
+            <p>Roy Meoded</p>
+          </div>
+        </a>
+
+        <a href="https://github.com/roy3177" target="_blank" class="contact-card">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.742 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+          </div>
+          <div>
+            <h4>GitHub</h4>
+            <p>github.com/roy3177</p>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <p>Designed & Built by <span class="gradient-text">Roy Meoded</span> · 2024</p>
+  </footer>
+
+  <!-- ========== SCROLL TO TOP ========== -->
+  <button id="scrollTop" aria-label="Scroll to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+      <path d="M18 15l-6-6-6 6"/>
+    </svg>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
