@@ -1,4 +1,19 @@
 /* ==========================================
+   DARK MODE TOGGLE
+========================================== */
+const themeToggle = document.getElementById('themeToggle');
+
+// Load saved preference (default: light)
+if (localStorage.getItem('theme') === 'dark') {
+  document.body.classList.add('dark');
+}
+
+themeToggle.addEventListener('click', () => {
+  document.body.classList.toggle('dark');
+  localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
+});
+
+/* ==========================================
    TYPED TEXT — Hero title animation
 ========================================== */
 const typedEl = document.querySelector('.typed-text');
