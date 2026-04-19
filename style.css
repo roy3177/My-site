@@ -1,24 +1,53 @@
 /* ==========================================
    ROOT VARIABLES & RESET
 ========================================== */
+
+/* ---- LIGHT MODE (default) ---- */
 :root {
-  --bg:         #070710;
-  --bg-2:       #0d0d1a;
-  --bg-card:    #111124;
-  --border:     rgba(99, 102, 241, 0.15);
-  --primary:    #6366f1;
-  --secondary:  #8b5cf6;
-  --accent:     #06b6d4;
-  --grad:       linear-gradient(135deg, #6366f1, #8b5cf6);
-  --grad-text:  linear-gradient(90deg, #6366f1, #a78bfa, #06b6d4);
-  --text:       #e2e8f0;
-  --text-muted: #64748b;
-  --font:       'Space Grotesk', sans-serif;
-  --mono:       'JetBrains Mono', monospace;
-  --radius:     12px;
-  --radius-lg:  20px;
-  --shadow:     0 8px 32px rgba(0,0,0,0.4);
-  --glow:       0 0 40px rgba(99,102,241,0.25);
+  --bg:              #f8fafc;
+  --bg-2:            #f1f5f9;
+  --bg-card:         #ffffff;
+  --border:          rgba(99, 102, 241, 0.18);
+  --primary:         #6366f1;
+  --secondary:       #8b5cf6;
+  --accent:          #06b6d4;
+  --grad:            linear-gradient(135deg, #6366f1, #8b5cf6);
+  --grad-text:       linear-gradient(90deg, #6366f1, #a78bfa, #06b6d4);
+  --text:            #1e293b;
+  --text-muted:      #64748b;
+  --font:            'Space Grotesk', sans-serif;
+  --mono:            'JetBrains Mono', monospace;
+  --radius:          12px;
+  --radius-lg:       20px;
+  --shadow:          0 8px 32px rgba(0,0,0,0.08);
+  --glow:            0 0 40px rgba(99,102,241,0.18);
+
+  /* theme-specific extras */
+  --navbar-scrolled-bg: rgba(248, 250, 252, 0.92);
+  --code-card-bg:       #f1f5f9;
+  --hero-name-grad:     linear-gradient(135deg, #1e293b 40%, #a78bfa);
+  --badge-bg:           rgba(248, 250, 252, 0.95);
+  --featured-grad:      linear-gradient(135deg, #ede9fe, #f5f3ff);
+  --grid-dot:           rgba(99,102,241,0.10);
+}
+
+/* ---- DARK MODE ---- */
+body.dark {
+  --bg:              #070710;
+  --bg-2:            #0d0d1a;
+  --bg-card:         #111124;
+  --border:          rgba(99, 102, 241, 0.15);
+  --text:            #e2e8f0;
+  --text-muted:      #64748b;
+  --shadow:          0 8px 32px rgba(0,0,0,0.4);
+  --glow:            0 0 40px rgba(99,102,241,0.25);
+
+  --navbar-scrolled-bg: rgba(7, 7, 16, 0.85);
+  --code-card-bg:       #0d0d1a;
+  --hero-name-grad:     linear-gradient(135deg, #fff 40%, #a78bfa);
+  --badge-bg:           rgba(13, 13, 26, 0.9);
+  --featured-grad:      linear-gradient(135deg, #111124, #0d0d1a);
+  --grid-dot:           rgba(99,102,241,0.18);
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -31,6 +60,7 @@ body {
   font-family: var(--font);
   line-height: 1.7;
   overflow-x: hidden;
+  transition: background 0.35s ease, color 0.35s ease;
 }
 
 a { text-decoration: none; color: inherit; }
@@ -90,7 +120,7 @@ section {
   transition: background 0.3s, backdrop-filter 0.3s, box-shadow 0.3s;
 }
 #navbar.scrolled {
-  background: rgba(7, 7, 16, 0.85);
+  background: var(--navbar-scrolled-bg);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   box-shadow: 0 1px 0 var(--border);
@@ -178,7 +208,7 @@ section {
 .hero-bg-grid {
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(rgba(99,102,241,0.18) 1px, transparent 1px);
+  background-image: radial-gradient(var(--grid-dot) 1px, transparent 1px);
   background-size: 40px 40px;
   pointer-events: none;
 }
@@ -225,7 +255,7 @@ section {
   font-weight: 700;
   letter-spacing: -0.04em;
   line-height: 1.05;
-  background: linear-gradient(135deg, #fff 40%, #a78bfa);
+  background: var(--hero-name-grad);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -408,7 +438,7 @@ section {
   bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(13,13,26,0.9);
+  background: var(--badge-bg);
   border: 1px solid rgba(99,102,241,0.4);
   border-radius: 999px;
   padding: 0.35rem 1rem;
@@ -422,7 +452,7 @@ section {
 /* Code card */
 
 .code-card {
-  background: #0d0d1a;
+  background: var(--code-card-bg);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   overflow: hidden;
@@ -790,7 +820,7 @@ section {
 
 .project-card.featured {
   border-color: rgba(99,102,241,0.4);
-  background: linear-gradient(135deg, #111124, #0d0d1a);
+  background: var(--featured-grad);
 }
 
 .project-badge {
@@ -862,7 +892,6 @@ section {
 }
 
 /* ==========================================
-<<<<<<< HEAD
    CERTIFICATIONS
 ========================================== */
 #certifications { background: var(--bg-2); }
@@ -893,7 +922,7 @@ section {
 }
 .cert-card.featured {
   border-color: rgba(99,102,241,0.4);
-  background: linear-gradient(135deg, #111124, #0d0d1a);
+  background: var(--featured-grad);
 }
 
 .cert-badge {
@@ -990,8 +1019,6 @@ section {
 }
 
 /* ==========================================
-=======
->>>>>>> 3fddb0f22de351d5fb115c21d4a5272d0fb8047f
    CONTACT
 ========================================== */
 #contact { background: var(--bg); }
@@ -1125,3 +1152,48 @@ footer {
 .reveal:nth-child(4) { transition-delay: 0.26s; }
 .reveal:nth-child(5) { transition-delay: 0.33s; }
 .reveal:nth-child(6) { transition-delay: 0.40s; }
+
+/* ==========================================
+   THEME TOGGLE BUTTON
+========================================== */
+.theme-toggle {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1.5px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.theme-toggle:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(99,102,241,0.2);
+}
+.theme-toggle svg {
+  width: 18px;
+  height: 18px;
+  transition: opacity 0.2s, transform 0.3s;
+}
+
+/* Show moon in light mode, sun in dark mode */
+.icon-sun  { display: none; }
+.icon-moon { display: block; }
+body.dark .icon-sun  { display: block; }
+body.dark .icon-moon { display: none; }
+
+/* Smooth background/color transitions for theme switching */
+/* Applied on bg-card elements so cards don't flash */
+.skill-category, .project-card, .contact-card, .cert-card,
+.edu-card, .military-card, .code-card, footer,
+#navbar, .nav-links, .profile-img-badge {
+  transition: background-color 0.35s ease, border-color 0.35s ease,
+              color 0.2s ease, box-shadow 0.35s ease;
+}
