@@ -1174,6 +1174,35 @@ body.dark .winner-subtitle { color: #e6b84a; }
 
 .cert-skills { display: flex; flex-wrap: wrap; gap: 0.5rem; }
 
+.cert-img-placeholder {
+  width: 100%;
+  min-height: 160px;
+  border-radius: 10px;
+  border: 1px solid rgba(99,102,241,0.2);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.cert-img-placeholder:hover {
+  transform: scale(1.015);
+  box-shadow: 0 8px 32px rgba(99,102,241,0.25);
+}
+.cert-img-placeholder .placeholder-icon {
+  font-size: 3rem;
+}
+.cert-img-placeholder .placeholder-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #ff9900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 @media (max-width: 600px) {
   .certs-grid { grid-template-columns: 1fr; }
   .cert-header { flex-wrap: wrap; }
