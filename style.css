@@ -507,10 +507,10 @@ section {
 
 .exp-card {
   background: var(--bg-card);
-  border: 1px solid var(--border);
+  border: 1px solid rgba(99,102,241,0.35);
   border-radius: 16px;
   padding: 2rem;
-  box-shadow: var(--shadow);
+  box-shadow: 0 4px 24px rgba(99,102,241,0.1), 0 1px 4px rgba(0,0,0,0.08);
   transition: transform 0.3s, box-shadow 0.3s;
   position: relative;
 }
@@ -577,8 +577,8 @@ section {
 }
 
 .exp-highlight {
-  background: linear-gradient(135deg, rgba(99,102,241,0.08), rgba(6,182,212,0.06));
-  border: 1px solid rgba(99,102,241,0.2);
+  background: linear-gradient(135deg, rgba(99,102,241,0.1), rgba(6,182,212,0.08));
+  border: 1px solid rgba(99,102,241,0.3);
   border-radius: 12px; padding: 1.25rem 1.5rem; margin-bottom: 1.75rem;
 }
 .exp-highlight-badge {
@@ -593,8 +593,8 @@ section {
 .exp-dashboard-inner {
   display: flex; align-items: flex-start; justify-content: space-between;
   gap: 1.5rem; flex-wrap: wrap;
-  background: linear-gradient(135deg, rgba(99,102,241,0.08), rgba(6,182,212,0.06));
-  border: 1px solid rgba(99,102,241,0.25); border-radius: 14px; padding: 1.5rem;
+  background: linear-gradient(135deg, rgba(99,102,241,0.1), rgba(6,182,212,0.08));
+  border: 1px solid rgba(99,102,241,0.3); border-radius: 14px; padding: 1.5rem;
 }
 .exp-dashboard-info { flex: 1; min-width: 0; }
 .exp-dashboard-desc { color: var(--text-muted); font-size: 0.88rem; line-height: 1.75; margin: 0.5rem 0 1rem; }
