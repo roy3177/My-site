@@ -542,7 +542,7 @@ section {
   -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
 }
 .exp-company { font-size: 1rem; font-weight: 600; color: var(--text); margin: 0; }
-.exp-division { font-size: 0.85rem; color: var(--muted); margin: 0.2rem 0 0; }
+.exp-division { font-size: 0.85rem; color: var(--text-muted); margin: 0.2rem 0 0; }
 .exp-meta { display: flex; flex-direction: column; align-items: flex-end; gap: 0.5rem; }
 .exp-period {
   font-size: 0.85rem; font-weight: 600; color: var(--primary);
@@ -559,7 +559,7 @@ section {
   50%      { box-shadow: 0 0 0 6px rgba(34,197,94,0.1); }
 }
 
-.exp-desc { color: var(--muted); line-height: 1.8; margin-bottom: 1.75rem; }
+.exp-desc { color: var(--text-muted); line-height: 1.8; margin-bottom: 1.75rem; }
 .exp-sub-title {
   font-size: 0.8rem; font-weight: 700; text-transform: uppercase;
   letter-spacing: 0.1em; color: var(--primary); margin: 0 0 0.9rem;
@@ -569,7 +569,7 @@ section {
 .exp-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.55rem; }
 .exp-list li {
   padding-left: 1.4rem; position: relative;
-  color: var(--muted); font-size: 0.9rem; line-height: 1.65;
+  color: var(--text-muted); font-size: 0.9rem; line-height: 1.65;
 }
 .exp-list li::before {
   content: '▸'; position: absolute; left: 0;
@@ -587,7 +587,7 @@ section {
   border-radius: 20px; padding: 0.2rem 0.7rem; display: inline-block; margin-bottom: 0.6rem;
 }
 .exp-highlight-title { font-size: 1.1rem; font-weight: 700; color: var(--text); margin: 0 0 0.6rem; }
-.exp-highlight-desc { color: var(--muted); font-size: 0.88rem; line-height: 1.75; margin: 0; }
+.exp-highlight-desc { color: var(--text-muted); font-size: 0.88rem; line-height: 1.75; margin: 0; }
 
 .exp-dashboard { margin-bottom: 1.75rem; }
 .exp-dashboard-inner {
@@ -597,7 +597,7 @@ section {
   border: 1px solid rgba(99,102,241,0.25); border-radius: 14px; padding: 1.5rem;
 }
 .exp-dashboard-info { flex: 1; min-width: 0; }
-.exp-dashboard-desc { color: var(--muted); font-size: 0.88rem; line-height: 1.75; margin: 0.5rem 0 1rem; }
+.exp-dashboard-desc { color: var(--text-muted); font-size: 0.88rem; line-height: 1.75; margin: 0.5rem 0 1rem; }
 .exp-dashboard-stack { display: flex; flex-wrap: wrap; gap: 0.4rem; }
 .exp-dashboard-btn {
   display: inline-flex; align-items: center; gap: 0.5rem;
@@ -623,7 +623,7 @@ section {
 .exp-gallery-item:hover .exp-gallery-img { transform: scale(1.02); }
 .exp-gallery-caption {
   display: block; text-align: center; font-size: 0.75rem;
-  color: var(--muted); padding: 0.45rem 0.5rem; background: var(--bg-card);
+  color: var(--text-muted); padding: 0.45rem 0.5rem; background: var(--bg-card);
 }
 
 .exp-skills { margin-bottom: 0.5rem; }
