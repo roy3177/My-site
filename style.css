@@ -642,6 +642,23 @@ section {
   .exp-gallery-grid { grid-template-columns: 1fr; }
   .exp-card-header { flex-direction: column; }
   .exp-meta { align-items: flex-start; }
+
+  .exp-dashboard-inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.25rem;
+    padding: 1.25rem;
+  }
+  .exp-dashboard-btn {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+  }
+  .exp-highlight-title { font-size: 1rem; }
+  .exp-dashboard-desc { font-size: 0.85rem; }
 }
 
 /* ==========================================
