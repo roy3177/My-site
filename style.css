@@ -1152,6 +1152,115 @@ body.dark .winner-subtitle { color: #e6b84a; }
 }
 .project-card > * { position: relative; z-index: 1; }
 
+/* ---- LevBoots Brain — semi-featured card ---- */
+.project-card.lev-featured {
+  grid-column: 1 / -1;
+  padding: 2rem 2.25rem;
+  border-color: rgba(6,182,212,0.45);
+  background: linear-gradient(135deg, rgba(6,182,212,0.07) 0%, rgba(99,102,241,0.07) 100%);
+}
+.project-card.lev-featured:hover {
+  border-color: rgba(6,182,212,0.8);
+  box-shadow: 0 0 40px rgba(6,182,212,0.12), var(--shadow);
+}
+.lev-inner {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 2.5rem;
+  align-items: start;
+}
+.lev-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+.lev-title { font-size: 1.5rem !important; }
+.lev-subtitle {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin: 0.15rem 0 0;
+  font-style: italic;
+}
+
+/* concept badges row */
+.lev-concept-badges {
+  display: flex;
+  gap: 0.9rem;
+  margin-bottom: 1.4rem;
+  flex-wrap: wrap;
+}
+.lev-concept-badge {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  padding: 0.7rem 1rem;
+  border-radius: 12px;
+  flex: 1;
+  min-width: 160px;
+  border: 1px solid transparent;
+}
+.lev-badge-rag   { background: rgba(99,102,241,0.12); border-color: rgba(99,102,241,0.3); }
+.lev-badge-mcp   { background: rgba(6,182,212,0.12);  border-color: rgba(6,182,212,0.3); }
+.lev-badge-agent { background: rgba(16,185,129,0.1);  border-color: rgba(16,185,129,0.3); }
+.lev-badge-icon { font-size: 1.25rem; line-height: 1; margin-top: 2px; }
+.lev-badge-label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.2rem;
+}
+.lev-badge-desc { font-size: 0.76rem; color: var(--text-muted); line-height: 1.4; }
+
+.lev-desc { font-size: 0.9rem; margin-bottom: 1.25rem; }
+
+/* right: video placeholder */
+.lev-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lev-video-placeholder {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 2px dashed rgba(6,182,212,0.4);
+  border-radius: 14px;
+  background: rgba(6,182,212,0.04);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-align: center;
+  padding: 1.5rem;
+}
+.lev-video-icon { font-size: 2.5rem; }
+.lev-video-label {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0;
+}
+.lev-video-sub {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .lev-inner {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .project-card.lev-featured { padding: 1.5rem; }
+  .lev-concept-badge { min-width: 100%; }
+  .lev-title { font-size: 1.25rem !important; }
+}
+
 .project-card.featured {
   border-color: rgba(99,102,241,0.4);
   background: var(--featured-grad);
