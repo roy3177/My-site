@@ -207,6 +207,26 @@ document.querySelectorAll('.project-card:not(.lev-featured):not(.winner)').forEa
 });
 
 /* ==========================================
+   LAZY LOAD VIDEOS
+========================================== */
+const lazyVideoObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const video = entry.target;
+      video.querySelectorAll('source').forEach(source => {
+        if (source.dataset.src) {
+          source.src = source.dataset.src;
+        }
+      });
+      video.load();
+      lazyVideoObserver.unobserve(video);
+    }
+  });
+}, { rootMargin: '200px' });
+
+document.querySelectorAll('video[preload="none"]').forEach(v => lazyVideoObserver.observe(v));
+
+/* ==========================================
    HERO PARTICLES
 ========================================== */
 const heroCanvas = document.getElementById('hero-particles');
