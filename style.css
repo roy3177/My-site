@@ -1719,8 +1719,7 @@ body.dark .icon-moon { display: none; }
 /* ==========================================
    GRAIN TEXTURE OVERLAY
 ========================================== */
-body::after {
-  content: '';
+#grain {
   position: fixed;
   inset: 0;
   pointer-events: none;
@@ -1728,6 +1727,12 @@ body::after {
   opacity: 0.038;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
   background-size: 300px 300px;
+}
+
+/* Videos always above overlays */
+.lev-video, .winner-video {
+  position: relative;
+  z-index: 10;
 }
 
 /* ==========================================
@@ -1752,50 +1757,7 @@ body::after {
 }
 .exp-line.drawn { transform: scaleY(1); }
 
-/* ==========================================
-   CUSTOM CURSOR
-========================================== */
-@media (hover: hover) and (pointer: fine) {
-  body { cursor: none; }
-  a, button, .project-card, .cert-card, .skill-category,
-  .contact-card, .exp-gallery-item, .winner-photo { cursor: none; }
-}
-
-#cursor-dot {
-  position: fixed;
-  width: 8px; height: 8px;
-  background: var(--primary);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 99999;
-  left: 0; top: 0;
-  transform: translate(-50%, -50%);
-  transition: background 0.2s, transform 0.15s;
-  will-change: left, top;
-}
-#cursor-ring {
-  position: fixed;
-  width: 34px; height: 34px;
-  border: 1.5px solid rgba(99,102,241,0.55);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 99998;
-  left: 0; top: 0;
-  transform: translate(-50%, -50%);
-  transition: width 0.25s, height 0.25s, border-color 0.25s, background 0.25s;
-  will-change: left, top;
-}
-body.cursor-hover #cursor-ring {
-  width: 52px; height: 52px;
-  border-color: var(--primary);
-  background: rgba(99,102,241,0.07);
-}
-body.cursor-hover #cursor-dot {
-  transform: translate(-50%, -50%) scale(0.5);
-}
-@media (hover: none) {
-  #cursor-dot, #cursor-ring { display: none; }
-}
+#cursor-dot, #cursor-ring { display: none; }
 
 /* ==========================================
    SCROLL PROGRESS BAR
