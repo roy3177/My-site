@@ -1223,6 +1223,22 @@ body.dark .winner-subtitle { color: #e6b84a; }
   align-items: center;
   justify-content: center;
 }
+.yt-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.25);
+}
+.yt-wrapper iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
 .lev-videos {
   display: flex;
   flex-direction: column;
