@@ -1729,10 +1729,14 @@ body.dark .icon-moon { display: none; }
   background-size: 300px 300px;
 }
 
-/* Videos always above overlays */
+/* Videos — force GPU layer, fix Chrome compositing */
 .lev-video, .winner-video {
   position: relative;
   z-index: 10;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 /* ==========================================

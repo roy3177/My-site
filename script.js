@@ -192,7 +192,7 @@ document.addEventListener('mousemove', (e) => {
 /* ==========================================
    PROJECT CARDS — Tilt effect on hover
 ========================================== */
-document.querySelectorAll('.project-card').forEach((card) => {
+document.querySelectorAll('.project-card:not(.lev-featured):not(.winner)').forEach((card) => {
   card.addEventListener('mousemove', (e) => {
     const rect  = card.getBoundingClientRect();
     const cx    = rect.left + rect.width  / 2;
