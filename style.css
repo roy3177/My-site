@@ -1223,32 +1223,27 @@ body.dark .winner-subtitle { color: #e6b84a; }
   align-items: center;
   justify-content: center;
 }
-.lev-video-placeholder {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  border: 2px dashed rgba(6,182,212,0.4);
-  border-radius: 14px;
-  background: rgba(6,182,212,0.04);
+.lev-videos {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  text-align: center;
-  padding: 1.5rem;
+  gap: 1rem;
+  width: 100%;
 }
-.lev-video-icon { font-size: 2.5rem; }
-.lev-video-label {
-  font-size: 0.95rem;
+.lev-video-item { display: flex; flex-direction: column; gap: 0.4rem; }
+.lev-video-title {
+  font-size: 0.8rem;
   font-weight: 700;
-  color: var(--text);
-  margin: 0;
-}
-.lev-video-sub {
-  font-size: 0.78rem;
   color: var(--text-muted);
   margin: 0;
-  line-height: 1.5;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.lev-video {
+  width: 100%;
+  border-radius: 10px;
+  background: #000;
+  display: block;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.25);
 }
 
 @media (max-width: 768px) {
@@ -1540,6 +1535,21 @@ body.dark .winner-subtitle { color: #e6b84a; }
 .contact-card h4 { font-size: 0.85rem; font-weight: 600; color: var(--text); }
 .contact-card p  { font-size: 0.8rem; color: var(--text-muted); margin-top: 0.1rem; }
 
+.contact-card.contact-icon-only {
+  min-width: unset;
+  width: 72px;
+  height: 72px;
+  padding: 0;
+  justify-content: center;
+  border-radius: 18px;
+}
+.contact-card.contact-icon-only .contact-icon {
+  width: 44px;
+  height: 44px;
+  background: none;
+  border: none;
+}
+
 /* ==========================================
    FOOTER
 ========================================== */
@@ -1705,6 +1715,223 @@ img:not(.lightbox-img) { cursor: zoom-in; }
 .icon-moon { display: block; }
 body.dark .icon-sun  { display: block; }
 body.dark .icon-moon { display: none; }
+
+/* ==========================================
+   GRAIN TEXTURE OVERLAY
+========================================== */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9990;
+  opacity: 0.038;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 300px 300px;
+}
+
+/* ==========================================
+   HERO PARTICLES CANVAS
+========================================== */
+#hero-particles {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ==========================================
+   TIMELINE DRAW ANIMATION
+========================================== */
+.exp-line {
+  transform-origin: top center;
+  transform: scaleY(0);
+  transition: transform 1.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.exp-line.drawn { transform: scaleY(1); }
+
+/* ==========================================
+   CUSTOM CURSOR
+========================================== */
+@media (hover: hover) and (pointer: fine) {
+  body { cursor: none; }
+  a, button, .project-card, .cert-card, .skill-category,
+  .contact-card, .exp-gallery-item, .winner-photo { cursor: none; }
+}
+
+#cursor-dot {
+  position: fixed;
+  width: 8px; height: 8px;
+  background: var(--primary);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  left: 0; top: 0;
+  transform: translate(-50%, -50%);
+  transition: background 0.2s, transform 0.15s;
+  will-change: left, top;
+}
+#cursor-ring {
+  position: fixed;
+  width: 34px; height: 34px;
+  border: 1.5px solid rgba(99,102,241,0.55);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99998;
+  left: 0; top: 0;
+  transform: translate(-50%, -50%);
+  transition: width 0.25s, height 0.25s, border-color 0.25s, background 0.25s;
+  will-change: left, top;
+}
+body.cursor-hover #cursor-ring {
+  width: 52px; height: 52px;
+  border-color: var(--primary);
+  background: rgba(99,102,241,0.07);
+}
+body.cursor-hover #cursor-dot {
+  transform: translate(-50%, -50%) scale(0.5);
+}
+@media (hover: none) {
+  #cursor-dot, #cursor-ring { display: none; }
+}
+
+/* ==========================================
+   SCROLL PROGRESS BAR
+========================================== */
+#scroll-progress {
+  position: fixed;
+  top: 0; left: 0;
+  height: 3px;
+  width: 0%;
+  background: var(--grad);
+  z-index: 10001;
+  border-radius: 0 2px 2px 0;
+  box-shadow: 0 0 10px rgba(99,102,241,0.5);
+  transition: width 0.08s linear;
+}
+
+/* ==========================================
+   HERO NAME — animated gradient
+========================================== */
+@keyframes nameGradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.hero-name {
+  background-size: 200% auto !important;
+  animation: nameGradientShift 5s ease infinite;
+}
+
+/* ==========================================
+   SECTION TITLE — animated underline on scroll-in
+========================================== */
+.section-title::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 3px;
+  background: var(--grad);
+  border-radius: 2px;
+  margin: 0.6rem auto 0;
+  transition: width 0.8s ease 0.3s;
+}
+.section-title.visible::after { width: 60px; }
+
+/* ==========================================
+   SPOTLIGHT (dark mode)
+========================================== */
+#spotlight {
+  position: fixed;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(99,102,241,0.08) 0%, transparent 65%);
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+body.dark #spotlight { opacity: 1; }
+
+/* ==========================================
+   CARD SHINE SWEEP
+========================================== */
+.project-card::after,
+.cert-card::after,
+.skill-category::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -80%;
+  width: 55%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.055), transparent);
+  transform: skewX(-18deg);
+  pointer-events: none;
+  z-index: 3;
+  transition: left 0s;
+}
+.project-card:hover::after,
+.cert-card:hover::after,
+.skill-category:hover::after {
+  left: 140%;
+  transition: left 0.65s ease;
+}
+
+/* ==========================================
+   CONTACT TOOLTIPS
+========================================== */
+.contact-card.contact-icon-only { position: relative; }
+.contact-card.contact-icon-only::before {
+  content: attr(aria-label);
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%) translateY(6px);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.28rem 0.65rem;
+  border-radius: 6px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s, transform 0.2s;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+  z-index: 10;
+}
+.contact-card.contact-icon-only:hover::before {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ==========================================
+   WINNER BANNER — clickable hint
+========================================== */
+.winner-award-banner { cursor: pointer; user-select: none; }
+.winner-award-banner:hover { filter: brightness(1.1); }
+
+/* ==========================================
+   PROFILE IMAGE TILT
+========================================== */
+.profile-img-wrapper {
+  transition: transform 0.15s ease;
+  transform-style: preserve-3d;
+}
+
+/* ==========================================
+   ACTIVE NAV LINK
+========================================== */
+.nav-links a.nav-active {
+  color: var(--text) !important;
+}
+.nav-links a.nav-active::after { width: 100%; }
 
 /* Smooth background/color transitions for theme switching */
 /* Applied on bg-card elements so cards don't flash */
