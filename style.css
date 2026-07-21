@@ -1181,6 +1181,54 @@ body.dark .winner-subtitle { color: #e6b84a; }
 .project-card > * { position: relative; z-index: 1; }
 
 /* ---- LevBoots Brain — semi-featured card ---- */
+/* ── Agentic Hire ── */
+.project-card.agentic-featured {
+  grid-column: 1 / -1;
+  padding: 2rem 2.25rem;
+  border-color: rgba(99,102,241,0.45);
+  background: linear-gradient(135deg, rgba(99,102,241,0.07) 0%, rgba(168,85,247,0.07) 100%);
+}
+.project-card.agentic-featured:hover { border-color: rgba(99,102,241,0.8); }
+.agentic-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+.agentic-header {
+  display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;
+}
+.agentic-title {
+  font-size: 1.6rem; font-weight: 800;
+  background: linear-gradient(135deg, #6366f1, #a855f7);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.agentic-subtitle { font-size: 0.9rem; color: var(--text-muted); font-weight: 500; }
+.agentic-agents {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 0.75rem; margin-bottom: 1.25rem;
+}
+.agent-badge {
+  display: flex; align-items: center; gap: 0.75rem;
+  background: rgba(99,102,241,0.08);
+  border: 1px solid rgba(99,102,241,0.2);
+  border-radius: 12px; padding: 0.75rem 1rem;
+  transition: background 0.2s, border-color 0.2s;
+}
+.agent-badge:hover { background: rgba(99,102,241,0.15); border-color: rgba(99,102,241,0.4); }
+.agent-icon { font-size: 1.3rem; flex-shrink: 0; }
+.agent-label { font-size: 0.82rem; font-weight: 700; color: var(--text); }
+.agent-desc  { font-size: 0.75rem; color: var(--text-muted); margin-top: 2px; }
+.agentic-desc { font-size: 0.95rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 1.25rem; }
+.agentic-right { display: flex; flex-direction: column; gap: 0.75rem; padding-top: 3.5rem; }
+.agentic-video-title { font-size: 0.9rem; font-weight: 700; color: var(--text-muted); }
+.agentic-video-wrap {
+  border-radius: 14px; overflow: hidden;
+  box-shadow: 0 8px 32px rgba(99,102,241,0.2);
+  border: 1px solid rgba(99,102,241,0.2);
+}
+.agentic-video { width: 100%; display: block; border-radius: 14px; }
+
 .project-card.lev-featured {
   grid-column: 1 / -1;
   padding: 2rem 2.25rem;
