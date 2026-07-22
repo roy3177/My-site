@@ -1541,6 +1541,21 @@ body.dark .winner-subtitle { color: #e6b84a; }
   color: var(--accent);
 }
 
+/* ── Project tech two-row layout ── */
+.project-tech { display: flex; flex-direction: column; gap: 0.5rem; }
+.pt-icons { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+.pt-ski {
+  display: flex; align-items: center; gap: 0.3rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.2rem 0.5rem;
+}
+.pt-ski i { font-size: 1.05rem; line-height: 1; }
+.pt-ski span { font-size: 0.62rem; font-weight: 600; color: var(--text); white-space: nowrap; }
+.pt-pills { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+.dark .pt-ski-dark i { filter: invert(1) brightness(1.8); }
+
 /* ==========================================
    CERTIFICATIONS
 ========================================== */
