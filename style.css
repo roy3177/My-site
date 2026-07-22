@@ -1937,9 +1937,12 @@ img:not(.lightbox-img) { cursor: zoom-in; }
   .code-card { max-width: 100%; }
 
   .projects-grid { grid-template-columns: 1fr; }
-  .contact-cards { flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 1rem; }
+  .contact-cards { flex-direction: row; flex-wrap: nowrap; justify-content: center; gap: 1.2rem; }
   .contact-card { width: 100%; max-width: 380px; }
-  .contact-card.contact-icon-only { width: 88px; max-width: 88px; }
+  .contact-card.contact-icon-only { width: 96px; max-width: 96px; padding: 1.2rem 0.5rem 0.9rem; }
+  .contact-card.contact-icon-only .contact-icon { width: 52px; height: 52px; border-radius: 14px; }
+  .contact-card.contact-icon-only .contact-icon svg { width: 26px; height: 26px; }
+  .contact-label { font-size: 0.72rem; }
 
   /* Skills sphere — shrink for mobile */
   .sphere-wrap { height: 300px; }
@@ -1947,19 +1950,29 @@ img:not(.lightbox-img) { cursor: zoom-in; }
   .sphere-container { width: 280px; height: 280px; }
   .sphere-glow { width: 260px; height: 260px; }
 
-  /* Skills grid — 2 columns on mobile, more compact */
-  .skills-v2 { grid-template-columns: 1fr 1fr; gap: 0.75rem; }
-  .skill-block { padding: 1rem 0.85rem; }
-  .skill-block-hdr { margin-bottom: 0.8rem; padding-bottom: 0.65rem; }
-  .skill-block-hdr h3 { font-size: 0.85rem; }
-  .ski { min-width: 54px; padding: 0.65rem 0.55rem; }
-  .ski span { font-size: 0.6rem; }
+  /* Skills grid — 2 columns on mobile, compact, no row-stretch */
+  .skills-v2 { grid-template-columns: 1fr 1fr; gap: 0.6rem; align-items: start; }
+  .skill-block { padding: 0.7rem 0.6rem; }
+  .skill-block-hdr { margin-bottom: 0.55rem; padding-bottom: 0.45rem; }
+  .skill-block-hdr h3 { font-size: 0.75rem; }
+  .skill-icons-grid { gap: 0.3rem; }
+  .ski-group-row { gap: 0.3rem; }
+  .ski-group-label { font-size: 0.58rem; }
+  .ski { min-width: 42px; max-width: 56px; flex: 1 1 42px; padding: 0.4rem 0.3rem; border-radius: 10px; }
+  .ski i { font-size: 1.25rem; }
+  .ski span { font-size: 0.48rem; }
+  .ski-svg { width: 1.25rem; height: 1.25rem; }
+  .ski-logo-img { width: 1.25rem; height: 1.25rem; }
 
   /* Agentic Hire — single column on mobile */
   .agentic-inner { grid-template-columns: 1fr; gap: 1.5rem; }
   .project-card.agentic-featured { padding: 1.5rem; }
   .agentic-title { font-size: 1.25rem !important; }
-  .agentic-video-wrap { max-height: 220px; }
+  .agentic-right { padding-top: 0; }
+  .agentic-video-wrap { max-height: 260px; }
+  .agentic-video { max-height: 260px; }
+  .rc-thumbs { grid-template-columns: 1fr 1fr; }
+  .rc-card { max-height: 140px; }
 
   /* Winner card already has breakpoint, ensure video scales */
   .winner-video { max-height: 220px; }
