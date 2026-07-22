@@ -554,3 +554,171 @@ document.querySelectorAll('img:not(.lightbox-img)').forEach((img) => {
 lightboxClose.addEventListener('click', closeLightbox);
 lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
 document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
+
+// ── SKILL SPHERE ──────────────────────────────────────────────────────────────
+(function () {
+  const container = document.getElementById('skillSphere');
+  const canvas    = document.getElementById('sphereCanvas');
+  if (!container || !canvas) return;
+
+  const DPR = window.devicePixelRatio || 1;
+  canvas.width  = 420 * DPR;
+  canvas.height = 420 * DPR;
+  const ctx = canvas.getContext('2d');
+  ctx.scale(DPR, DPR);
+  const CX = 210, CY = 210;
+
+  const skills = [
+    { icon: 'devicon-python-plain colored',                  label: 'Python' },
+    { icon: 'devicon-cplusplus-plain colored',               label: 'C++' },
+    { icon: 'devicon-c-plain colored',                       label: 'C' },
+    { icon: 'devicon-java-plain colored',                    label: 'Java' },
+    { icon: 'devicon-typescript-plain colored',              label: 'TypeScript' },
+    { icon: 'devicon-php-plain colored',                     label: 'PHP' },
+    { icon: 'devicon-pandas-plain colored',                  label: 'Pandas' },
+    { icon: 'devicon-numpy-plain colored',                   label: 'NumPy' },
+    { icon: 'devicon-pytorch-plain colored',                 label: 'PyTorch' },
+    { icon: 'devicon-scikitlearn-plain colored',             label: 'scikit-learn' },
+    { icon: 'devicon-amazonwebservices-plain-wordmark colored', label: 'AWS' },
+    { icon: 'devicon-git-plain colored',                     label: 'Git' },
+    { icon: 'devicon-github-original',                       label: 'GitHub' },
+    { icon: 'devicon-docker-plain colored',                  label: 'Docker' },
+    { icon: 'devicon-postgresql-plain colored',              label: 'PostgreSQL' },
+    { icon: 'devicon-mysql-plain colored',                   label: 'MySQL' },
+    { icon: 'devicon-nodejs-plain colored',                  label: 'Node.js' },
+    { icon: 'devicon-redis-plain colored',                   label: 'Redis' },
+    { icon: 'devicon-fastapi-plain colored',                 label: 'FastAPI' },
+    { icon: 'devicon-jira-plain colored',                    label: 'Jira' },
+    { icon: 'devicon-linux-plain',                           label: 'Linux' },
+    { icon: 'devicon-slack-plain colored',                   label: 'Slack' },
+  ];
+
+  const RADIUS = 170;
+  const PHI = Math.PI * (3 - Math.sqrt(5));
+  const n = skills.length;
+
+  // Fibonacci sphere distribution
+  let positions = skills.map((_, i) => {
+    const y = 1 - (i / (n - 1)) * 2;
+    const r = Math.sqrt(Math.max(0, 1 - y * y));
+    const theta = PHI * i;
+    return { x: Math.cos(theta) * r, y, z: Math.sin(theta) * r };
+  });
+
+  // Create DOM elements
+  const elements = skills.map(s => {
+    const el = document.createElement('div');
+    el.className = 'sphere-item';
+    el.innerHTML = `<i class="${s.icon}"></i><span>${s.label}</span>`;
+    container.appendChild(el);
+    return el;
+  });
+
+  let angleX = 0.3, angleY = 0;
+  let targetX = 0, targetY = 0;
+  let isHovered = false;
+
+  container.addEventListener('mousemove', e => {
+    const rect = container.getBoundingClientRect();
+    targetX = ((e.clientY - rect.top)  / rect.height - 0.5) *  0.06;
+    targetY = ((e.clientX - rect.left) / rect.width  - 0.5) * -0.06;
+  });
+  container.addEventListener('mouseenter', () => isHovered = true);
+  container.addEventListener('mouseleave', () => { isHovered = false; targetX = 0; targetY = 0; });
+
+  function ry(p, a) {
+    const c = Math.cos(a), s = Math.sin(a);
+    return { x: p.x * c - p.z * s, y: p.y, z: p.x * s + p.z * c };
+  }
+  function rx(p, a) {
+    const c = Math.cos(a), s = Math.sin(a);
+    return { x: p.x, y: p.y * c - p.z * s, z: p.y * s + p.z * c };
+  }
+
+  let speedX = 0.002, speedY = 0.006;
+
+  // ── wireframe helpers ──
+  function project(p) {
+    const fov = 400;
+    const scale = fov / (fov - p.z * RADIUS);
+    return { x: CX + p.x * RADIUS * scale, y: CY + p.y * RADIUS * scale, z: p.z };
+  }
+
+  function drawCircle(tiltX, tiltY, segments = 64) {
+    const pts = [];
+    for (let i = 0; i <= segments; i++) {
+      const a = (i / segments) * Math.PI * 2;
+      let p = { x: Math.cos(a), y: Math.sin(a), z: 0 };
+      p = ry(p, tiltY);
+      p = rx(p, tiltX);
+      // apply current globe rotation
+      let q = ry(p, angleY);
+      q = rx(q, angleX);
+      pts.push(project(q));
+    }
+    ctx.beginPath();
+    pts.forEach((pt, i) => i === 0 ? ctx.moveTo(pt.x, pt.y) : ctx.lineTo(pt.x, pt.y));
+    ctx.stroke();
+  }
+
+  function drawWireframe() {
+    ctx.clearRect(0, 0, 420, 420);
+    const isDark = document.body.classList.contains('dark');
+    const lineColor = isDark ? 'rgba(139,92,246,0.22)' : 'rgba(99,102,241,0.18)';
+    ctx.strokeStyle = lineColor;
+    ctx.lineWidth   = 0.8;
+
+    // latitude rings (horizontal)
+    const latCount = 7;
+    for (let i = 1; i < latCount; i++) {
+      const phi = (i / latCount) * Math.PI;
+      const r   = Math.sin(phi);
+      const yOff = Math.cos(phi);
+      // draw as tilted circle: tilt so ring sits at yOff on Y axis
+      const tilt = Math.acos(Math.max(-1, Math.min(1, yOff)));
+      drawCircle(tilt, 0);
+    }
+
+    // longitude lines (vertical great circles)
+    const lonCount = 8;
+    for (let i = 0; i < lonCount; i++) {
+      drawCircle(Math.PI / 2, (i / lonCount) * Math.PI);
+    }
+  }
+
+  function render() {
+    if (isHovered) {
+      speedX += (targetX - speedX) * 0.08;
+      speedY += (targetY - speedY) * 0.08;
+    } else {
+      speedX += (0.002 - speedX) * 0.04;
+      speedY += (0.006 - speedY) * 0.04;
+    }
+
+    angleX += speedX;
+    angleY += speedY;
+
+    drawWireframe();
+
+    positions.forEach((pos, i) => {
+      let p = ry(pos, angleY);
+      p = rx(p, angleX);
+
+      const fov = 400;
+      const scale = fov / (fov - p.z * RADIUS);
+      const x = p.x * RADIUS * scale;
+      const y = p.y * RADIUS * scale;
+      const depth = (p.z + 1) / 2;
+      const opacity = 0.25 + depth * 0.75;
+
+      const el = elements[i];
+      el.style.transform = `translate(-50%,-50%) translate(${x}px,${y}px) scale(${scale.toFixed(3)})`;
+      el.style.opacity   = opacity.toFixed(3);
+      el.style.zIndex    = Math.round(depth * 100);
+    });
+
+    requestAnimationFrame(render);
+  }
+
+  render();
+})();

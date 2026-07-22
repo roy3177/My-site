@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css" />
 </head>
 <body>
 
@@ -322,90 +323,132 @@
   <section id="skills">
     <div class="container">
       <h2 class="section-title reveal">Technical <span class="gradient-text">Skills</span></h2>
-      <div class="skills-grid">
+      <!-- 3D Sphere -->
+      <div class="sphere-wrap reveal">
+        <div class="sphere-glow"></div>
+        <canvas id="sphereCanvas" class="sphere-canvas"></canvas>
+        <div class="sphere-container" id="skillSphere"></div>
+      </div>
 
-        <div class="skill-category reveal">
-          <div class="skill-cat-header">
-            <span class="skill-icon">⌨️</span>
-            <h3>Programming</h3>
-          </div>
-          <div class="skill-tags">
-            <span class="tag">Python</span>
-            <span class="tag">C++</span>
-            <span class="tag">C</span>
-            <span class="tag">Java</span>
-            <span class="tag">TypeScript</span>
-            <span class="tag">PHP</span>
+      <div class="skills-v2">
+
+        <!-- Frontend -->
+        <div class="skill-block reveal">
+          <div class="skill-block-hdr"><h3>Frontend</h3></div>
+          <div class="skill-icons-grid">
+            <div class="ski-group-label">Languages</div>
+            <div class="ski-group-row">
+              <div class="ski"><i class="devicon-javascript-plain colored"></i><span>JavaScript</span></div>
+              <div class="ski"><i class="devicon-typescript-plain colored"></i><span>TypeScript</span></div>
+              <div class="ski"><i class="devicon-html5-plain colored"></i><span>HTML5</span></div>
+              <div class="ski"><i class="devicon-css3-plain colored"></i><span>CSS3</span></div>
+            </div>
+            <div class="ski-group-label">Frameworks & Tools</div>
+            <div class="ski-group-row">
+              <div class="ski"><i class="devicon-react-original colored"></i><span>React</span></div>
+              <div class="ski ski-dark"><i class="devicon-nextjs-plain"></i><span>Next.js</span></div>
+              <div class="ski"><i class="devicon-tailwindcss-plain colored"></i><span>Tailwind</span></div>
+            </div>
           </div>
         </div>
 
-        <div class="skill-category reveal">
-          <div class="skill-cat-header">
-            <span class="skill-icon">🤖</span>
-            <h3>AI / Data Science</h3>
-          </div>
-          <div class="skill-tags">
-            <span class="tag">Machine Learning</span>
-            <span class="tag">Data Analysis</span>
-            <span class="tag">Pandas</span>
-            <span class="tag">NumPy</span>
-            <span class="tag">Deep Learning</span>
-            <span class="tag">NLP</span>
-            <span class="tag">RAG</span>
-            <span class="tag">MCP</span>
-            <span class="tag">Prompt Engineering</span>
-            <span class="tag">AI Agents</span>
+        <!-- Languages -->
+        <div class="skill-block reveal">
+          <div class="skill-block-hdr"><h3>Languages</h3></div>
+          <div class="skill-icons-grid">
+            <div class="ski"><i class="devicon-c-plain colored"></i><span>C</span></div>
+            <div class="ski"><i class="devicon-cplusplus-plain colored"></i><span>C++</span></div>
+            <div class="ski"><i class="devicon-java-plain colored"></i><span>Java</span></div>
+            <div class="ski"><i class="devicon-python-plain colored"></i><span>Python</span></div>
+            <div class="ski"><i class="devicon-php-plain colored"></i><span>PHP</span></div>
           </div>
         </div>
 
-        <div class="skill-category reveal">
-          <div class="skill-cat-header">
-            <span class="skill-icon">☁️</span>
-            <h3>Cloud (AWS)</h3>
-          </div>
-          <div class="skill-tags">
-            <span class="tag">AWS</span>
-            <span class="tag">EC2</span>
-            <span class="tag">S3</span>
-            <span class="tag">Lambda</span>
-            <span class="tag">IAM</span>
-            <span class="tag">VPC</span>
-            <span class="tag">RDS</span>
-            <span class="tag">CloudWatch</span>
+        <!-- Backend -->
+        <div class="skill-block reveal">
+          <div class="skill-block-hdr"><h3>Backend</h3></div>
+          <div class="skill-icons-grid">
+            <div class="ski"><i class="devicon-fastapi-plain colored"></i><span>FastAPI</span></div>
+            <div class="ski"><i class="devicon-nodejs-plain colored"></i><span>Node.js</span></div>
+            <div class="ski"><i class="devicon-postgresql-plain colored"></i><span>PostgreSQL</span></div>
+            <div class="ski"><i class="devicon-mysql-plain colored"></i><span>MySQL</span></div>
+            <div class="ski"><i class="devicon-sqlite-plain colored"></i><span>SQLite</span></div>
+            <div class="ski"><i class="devicon-redis-plain colored"></i><span>Redis</span></div>
+            <div class="ski ski-dark"><i class="devicon-express-original"></i><span>Express</span></div>
           </div>
         </div>
 
-        <div class="skill-category reveal">
-          <div class="skill-cat-header">
-            <span class="skill-icon">🛠️</span>
-            <h3>Tools & DevOps</h3>
-          </div>
-          <div class="skill-tags">
-            <span class="tag">Git</span>
-            <span class="tag">GitHub</span>
-            <span class="tag">Linux / WSL</span>
-            <span class="tag">Docker</span>
-            <span class="tag">PostgreSQL</span>
-            <span class="tag">MySQL</span>
-            <span class="tag">Node.js</span>
-            <span class="tag">Jira</span>
-            <span class="tag">Slack</span>
-            <span class="tag">Claude Code</span>
+        <!-- Data Science -->
+        <div class="skill-block reveal">
+          <div class="skill-block-hdr"><h3>Data Science</h3></div>
+          <div class="skill-icons-grid">
+            <div class="ski"><i class="devicon-pandas-plain colored"></i><span>Pandas</span></div>
+            <div class="ski"><i class="devicon-numpy-plain colored"></i><span>NumPy</span></div>
+            <div class="ski"><i class="devicon-pytorch-plain colored"></i><span>PyTorch</span></div>
+            <div class="ski"><i class="devicon-scikitlearn-plain colored"></i><span>scikit-learn</span></div>
+            <div class="ski"><i class="devicon-matplotlib-plain colored"></i><span>Matplotlib</span></div>
+            <div class="ski"><i class="devicon-jupyter-plain colored"></i><span>Jupyter</span></div>
+            <div class="ski"><i class="devicon-opencv-plain colored"></i><span>OpenCV</span></div>
           </div>
         </div>
 
-        <div class="skill-category reveal">
-          <div class="skill-cat-header">
-            <span class="skill-icon">🧩</span>
-            <h3>CS Concepts</h3>
+        <!-- AI -->
+        <div class="skill-block reveal">
+          <div class="skill-block-hdr"><h3>AI</h3></div>
+          <div class="skill-icons-grid">
+            <!-- Claude / Anthropic -->
+            <div class="ski ski-brand">
+              <svg class="ski-svg" viewBox="0 0 24 24" fill="currentColor"><path d="M13.83 3.52h3.6L24 20.48h-3.6l-6.57-16.96zm-6.26 0h3.6l6.57 16.96h-3.6zm-3.36 0h3.39L9.97 12.1 8.43 16.12 4.21 3.52zm-.6 16.96h3.39l-1.55-4.01H2.02zM0 20.48l1.54-3.93h3.31L3.33 20.48z"/></svg>
+              <span>Claude</span>
+            </div>
+            <!-- OpenAI -->
+            <div class="ski ski-brand">
+              <svg class="ski-svg" viewBox="0 0 24 24" fill="currentColor"><path d="M22.28 9.76a5.96 5.96 0 00-.52-4.93 6.06 6.06 0 00-6.51-2.91A6.07 6.07 0 0010.6.1a6.09 6.09 0 00-5.79 4.21 6.06 6.06 0 00-4.06 2.93 6.07 6.07 0 00.75 7.14 5.96 5.96 0 00.52 4.93 6.06 6.06 0 006.51 2.91 6.07 6.07 0 004.65 2.83 6.09 6.09 0 005.8-4.21 6.06 6.06 0 004.05-2.93 6.07 6.07 0 00-.75-7.14zM13.4 21.58a4.5 4.5 0 01-2.89-1.05l.14-.08 4.8-2.77a.79.79 0 00.4-.69V9.6l2.03 1.17a.07.07 0 01.04.06v5.61a4.52 4.52 0 01-4.52 4.52zm-9.81-4.14a4.5 4.5 0 01-.54-3.03l.15.09 4.8 2.77a.77.77 0 00.79 0l5.86-3.38v2.34a.08.08 0 01-.03.06L9.9 17.9a4.52 4.52 0 01-6.31-1.56zM2.84 7.88a4.51 4.51 0 012.35-1.98v5.71a.78.78 0 00.4.68l5.84 3.37-2.03 1.17a.08.08 0 01-.07 0L4.66 14a4.52 4.52 0 01-1.82-6.12zm16.66 3.88l-5.86-3.39 2.03-1.17a.07.07 0 01.07 0l4.68 2.7a4.51 4.51 0 01-.7 8.14v-5.71a.78.78 0 00-.22-.57zm2.02-3.05l-.15-.09-4.79-2.79a.78.78 0 00-.79 0L9.93 9.21V6.87a.08.08 0 01.03-.06l4.68-2.7a4.52 4.52 0 016.88 4.68zM8.87 12.82 6.84 11.65a.08.08 0 01-.04-.06V6a4.51 4.51 0 017.41-3.47l-.14.08-4.8 2.77a.79.79 0 00-.4.69zm1.1-2.37 2.61-1.5 2.6 1.5v3l-2.6 1.5-2.61-1.5z"/></svg>
+              <span>OpenAI</span>
+            </div>
+            <!-- Gemini -->
+            <div class="ski ski-brand">
+              <svg class="ski-svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 24A14.3 14.3 0 000 12 14.3 14.3 0 0012 0a14.3 14.3 0 0012 12 14.3 14.3 0 00-12 12z"/></svg>
+              <span>Gemini</span>
+            </div>
+            <!-- Langfuse -->
+            <div class="ski">
+              <div class="ski-monogram" style="background:linear-gradient(135deg,#f97316,#ea580c)">LF</div>
+              <span>Langfuse</span>
+            </div>
+            <!-- MCP -->
+            <div class="ski">
+              <div class="ski-monogram" style="background:linear-gradient(135deg,#6366f1,#8b5cf6)">MCP</div>
+              <span>MCP</span>
+            </div>
+            <!-- Lovable -->
+            <div class="ski ski-brand">
+              <svg class="ski-svg" viewBox="0 0 24 24" fill="#ec4899"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+              <span>Lovable</span>
+            </div>
           </div>
-          <div class="skill-tags">
-            <span class="tag">Data Structures</span>
-            <span class="tag">Algorithms</span>
-            <span class="tag">Networking</span>
-            <span class="tag">TCP/IP & Sockets</span>
-            <span class="tag">Operating Systems</span>
-            <span class="tag">OOP</span>
+        </div>
+
+        <!-- Cloud -->
+        <div class="skill-block reveal">
+          <div class="skill-block-hdr"><h3>Cloud</h3></div>
+          <div class="skill-icons-grid">
+            <div class="ski"><i class="devicon-amazonwebservices-plain-wordmark colored"></i><span>AWS</span></div>
+            <div class="ski"><i class="devicon-docker-plain colored"></i><span>Docker</span></div>
+            <div class="ski"><i class="devicon-linux-plain colored"></i><span>Linux</span></div>
+            <div class="ski ski-dark"><i class="devicon-railway-plain"></i><span>Railway</span></div>
+            <div class="ski ski-dark"><i class="devicon-vercel-plain"></i><span>Vercel</span></div>
+          </div>
+        </div>
+
+        <!-- Manage -->
+        <div class="skill-block reveal">
+          <div class="skill-block-hdr"><h3>Manage</h3></div>
+          <div class="skill-icons-grid">
+            <div class="ski"><i class="devicon-git-plain colored"></i><span>Git</span></div>
+            <div class="ski ski-dark"><i class="devicon-github-original"></i><span>GitHub</span></div>
+            <div class="ski"><i class="devicon-jira-plain colored"></i><span>Jira</span></div>
+            <div class="ski"><i class="devicon-slack-plain colored"></i><span>Slack</span></div>
           </div>
         </div>
 
