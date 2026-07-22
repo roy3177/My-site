@@ -1,4 +1,20 @@
 /* ==========================================
+   GMAIL DEEP LINK
+========================================== */
+function openGmail(e) {
+  const isMobileDevice = /Android|iPhone|iPad/i.test(navigator.userAgent);
+  if (!isMobileDevice) return;
+  e.preventDefault();
+  // Try Gmail app deep link; fallback to mailto after 1s if app not installed
+  const appLink = 'googlegmail:///co?to=roymeoded2512@gmail.com';
+  const fallback = 'mailto:roymeoded2512@gmail.com';
+  let left = true;
+  window.addEventListener('blur', () => { left = false; }, { once: true });
+  window.location.href = appLink;
+  setTimeout(() => { if (left) window.location.href = fallback; }, 1000);
+}
+
+/* ==========================================
    DARK MODE TOGGLE
 ========================================== */
 const themeToggle = document.getElementById('themeToggle');
