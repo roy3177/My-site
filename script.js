@@ -18,7 +18,7 @@ themeToggle.addEventListener('click', () => {
 ========================================== */
 const typedEl = document.querySelector('.typed-text');
 const phrases = [
-  'Computer Science Student',
+  'Computer Science Graduate',
   'Data Science & AI Enthusiast',
   'Backend Developer',
   'Problem Solver',
@@ -562,11 +562,13 @@ document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLight
   if (!container || !canvas) return;
 
   const DPR = window.devicePixelRatio || 1;
-  canvas.width  = 420 * DPR;
-  canvas.height = 420 * DPR;
+  const isMobile = window.innerWidth <= 768;
+  const SIZE = isMobile ? 280 : 420;
+  canvas.width  = SIZE * DPR;
+  canvas.height = SIZE * DPR;
   const ctx = canvas.getContext('2d');
   ctx.scale(DPR, DPR);
-  const CX = 210, CY = 210;
+  const CX = SIZE / 2, CY = SIZE / 2;
 
   const skills = [
     { icon: 'devicon-python-plain colored',                  label: 'Python' },
@@ -593,7 +595,7 @@ document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLight
     { icon: 'devicon-slack-plain colored',                   label: 'Slack' },
   ];
 
-  const RADIUS = 170;
+  const RADIUS = isMobile ? 110 : 170;
   const PHI = Math.PI * (3 - Math.sqrt(5));
   const n = skills.length;
 
@@ -664,9 +666,9 @@ document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLight
   function drawWireframe() {
     ctx.clearRect(0, 0, 420, 420);
     const isDark = document.body.classList.contains('dark');
-    const lineColor = isDark ? 'rgba(139,92,246,0.22)' : 'rgba(99,102,241,0.18)';
+    const lineColor = isDark ? 'rgba(139,92,246,0.55)' : 'rgba(99,102,241,0.18)';
     ctx.strokeStyle = lineColor;
-    ctx.lineWidth   = 0.8;
+    ctx.lineWidth   = isDark ? 1.1 : 0.8;
 
     // latitude rings (horizontal)
     const latCount = 7;
